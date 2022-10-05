@@ -1,0 +1,87 @@
+/* estilos de letras css*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.container {
+  display: flex;
+}
+
+.info {
+  box-shadow: 20px 25px 20px #0f3460;
+  border-radius: 25px;
+}
+#btn {
+  position: relative;
+  left: 20%;
+}
+
+/* estylos a etiquetas en general*/
+
+input:focus {
+  outline: 1px solid #e94560;
+}
+body {
+  background-color: #16213e;
+}
+
+legend {
+  color: #e94560;
+}
+form {
+  width: 23rem;
+}
+form > button {
+  margin: 2rem;
+}
+section {
+  margin-top: 15px;
+  padding: 15px;
+  margin: 12px;
+}
+
+#eliminar {
+  color: #e64848;
+  cursor: pointer;
+}
+#eliminar:hover {
+  color: #c21010;
+}
+
+#editar {
+  cursor: pointer;
+  color: #533483;
+}
+
+#editar:hover {
+  color: #0f3460;
+}
+
+@media screen and (max-width: 769px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  form {
+    width: 40rem;
+  }
+
+  .info {
+    background-color: #0f3460;
+    box-shadow: none;
+    position: relative;
+    right: 1%;
+  }
+
+  .datos {
+    position: relative;
+    right: 9%;
+  }
+
+  #btn {
+    position: relative;
+    left: 50%;
+  }
+
+  .datos {
+    width: 7rem;
+  }
+}

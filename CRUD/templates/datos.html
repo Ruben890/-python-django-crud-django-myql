@@ -1,0 +1,44 @@
+{% extends 'index.html' %} {% block contents %}
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Cedula</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  {% for i in post %}
+  <tbody>
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.nombre}}</td>
+      <td>{{i.apellido}}</td>
+      <td>{{i.edad}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.telefono}}</td>
+      <td>{{i.cedula}}</td>
+      <td>
+       <a href="eliminar/{{i.id}}">
+          <i
+            class="fa-solid fa-circle-xmark"
+            title="Eliminar"
+            id="eliminar"
+          ></i>
+        </a>
+      </td>
+      <td>
+        <a href="editar/{{i.cedula}}">
+          <i id="editar" class="fa-solid fa-pen-to-square" title="Editar"></i
+        ></a>
+      </td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+{% endblock%}

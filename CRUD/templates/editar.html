@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link de BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- LINK DE fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/80afc1ebb2.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--link de CSS-->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+    <title>Editar Persona</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="info">
+        <form
+          action="/editar_persona/"
+          class="form-group"
+          method="post"
+          id="form"
+        >
+          {% csrf_token %}
+          <fieldset class="form-gruop">
+            <div class="row">
+              <legend class="form-legend">Modificar persona</legend>
+            </div>
+
+            <div class="col12">
+            <input type="text" name="id"  value="{{persona.id}}" readonly style="width: 1.5rem; margin-bottom: 1rem; border-radius: 5rem; border: none; color:black; text-align: center;" title="ID">
+              <label for="name" class="form-label"> </label>
+              <input
+              value="{{persona.nombre}}"
+                type="text"
+                placeholder="Nombre"
+                name="nombre"
+                class="form-control"
+                required
+              />
+              <label for="lasname" class="form-label"> </label>
+              <input
+              value="{{persona.apellido}}"
+                type="text"
+                placeholder="Apellido"
+                name="apellido"
+                class="form-control"
+                required
+              />
+              <label for="edad" class="form-label"> </label>
+              <input
+              value="{{persona.edad}}"
+                type="number"
+                name="edad"
+                placeholder="Edad"
+                class="form-control"
+                required
+              />
+
+              <label for="email" class="form-label"> </label>
+              <input
+              value="{{persona.email}}"
+                type="text"
+                placeholder="Email"
+                name="email"
+                class="form-control"
+                required
+              />
+              <label for="Telefono"> </label>
+              <input
+              value="{{persona.telefono}}"
+                type="text"
+                name="telefono"
+                placeholder="Numero Telefonico"
+                class="form-control"
+                title="Numero Telefonico"
+              />
+
+              <label for="Cedula" class="form-label"> </label>
+              <input
+              readonly
+              value="{{persona.cedula}}"
+                id="cedula"
+                type="text"
+                name="cedula"
+                placeholder="Numero de Cedula menos de 11 caracteres"
+                class="form-control"
+                max="11"
+                min="5"
+                title="Cedula"
+              />
+            </div>
+          </fieldset>
+          <button class="btn btn-danger" type="reset">Reset</button>
+          <button type="submit" class="btn btn-danger" id="btn">
+            Editar Datos
+          </button>
+        </form>
+         </section>
+      <table
+        class="table table-success table-striped"
+        style="height: 5rem; margin-top: 5rem; margin-left: 1.5rem;"
+      >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Cedula</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{persona.id}}</th>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.edad}}</td>
+            <td>{{persona.email}}</td>
+            <td>{{persona.telefono}}</td>
+            <td>{{persona.cedula}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <section> 
+    </main>
+    <!-- LINK DE BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
